@@ -1,0 +1,59 @@
+#N canvas 302 22 491 802 12;
+#X obj 49 170 adc~;
+#X floatatom 51 425 5 0 0 0 - - -;
+#X floatatom 70 448 5 0 0 0 - - -;
+#X floatatom 90 471 5 0 0 0 - - -;
+#X obj 50 315 bonk~ 1024;
+#X obj 64 202 env~ 4096;
+#X floatatom 64 226 5 0 0 0 - - -;
+#X floatatom 109 493 5 0 0 0 - - -;
+#X floatatom 130 515 5 0 0 0 - - -;
+#X floatatom 150 537 5 0 0 0 - - -;
+#X floatatom 169 560 5 0 0 0 - - -;
+#X floatatom 188 581 5 0 0 0 - - -;
+#X floatatom 208 604 5 0 0 0 - - -;
+#X floatatom 227 627 5 0 0 0 - - -;
+#X floatatom 247 650 5 0 0 0 - - -;
+#X obj 51 401 unpack f f f f f f f f f f f;
+#X text 64 250 env~ calculates RMS amplitude over a number of samples
+(4096 in this case = 1/10 sec). Use env~ to estimate the amplitude
+of a signal \, 100 dB = maximum;
+#X text 30 105 bonk~ is for transient detection (especially of noisy
+\, percussive signals) when bonk~ detects a transient it outputs the
+amplitude of 11 spectral regions.;
+#X floatatom 157 373 5 0 0 0 - - -;
+#X floatatom 117 373 5 0 0 0 - - -;
+#X text 32 675 Bonk's two outputs are the raw spectrum of the attack
+(provided as a list of 11 numbers giving the signal "loudness" in the
+11 frequency bands used) \, and the "cooked" output which gives only
+an instrument number (counting up from zero) and a "velocity". The
+instrumnent number is significant only if Bonk has a "template set"
+in memory.;
+#X text 258 400 raw;
+#X text 215 341 cooked;
+#X obj 368 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 368 51 \; pd dsp \$1;
+#X text 31 27 attack_detection_with_bonk~;
+#X obj 117 343 unpack f f f;
+#X floatatom 199 374 5 0 0 0 - - -;
+#X connect 0 0 4 0;
+#X connect 0 0 5 0;
+#X connect 4 0 15 0;
+#X connect 4 1 26 0;
+#X connect 5 0 6 0;
+#X connect 15 0 1 0;
+#X connect 15 1 2 0;
+#X connect 15 2 3 0;
+#X connect 15 3 7 0;
+#X connect 15 4 8 0;
+#X connect 15 5 9 0;
+#X connect 15 6 10 0;
+#X connect 15 7 11 0;
+#X connect 15 8 12 0;
+#X connect 15 9 13 0;
+#X connect 15 10 14 0;
+#X connect 23 0 24 0;
+#X connect 26 0 19 0;
+#X connect 26 1 18 0;
+#X connect 26 2 27 0;

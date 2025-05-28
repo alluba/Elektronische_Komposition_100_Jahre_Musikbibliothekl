@@ -1,0 +1,73 @@
+#N canvas 582 160 608 569 12;
+#X obj 21 42 adc~;
+#X obj 21 77 env~;
+#X floatatom 66 105 5 0 0 0 - - -;
+#X floatatom 21 105 5 0 0 0 - - -;
+#X obj 21 192 select 1;
+#X obj 21 220 bng 15 250 50 0 empty empty empty 0 -6 0 8 -261689 -258699
+-258699;
+#X obj 19 302 hip~ 1000;
+#X obj 19 386 lop~ 1000;
+#X floatatom 19 442 5 0 0 0 - - -;
+#X obj 19 330 hip~ 1000;
+#X obj 19 358 lop~ 1000;
+#X obj 19 274 adc~;
+#X obj 66 77 env~ 16384;
+#X text 128 301 highpass the signal with 1000 Hz cuttoff;
+#X text 128 330 sharpen the lowpass filter;
+#X obj 19 414 env~ 4096;
+#X text 127 358 lowpass the signal to narrow the frequency;
+#X obj 19 495 change;
+#X text 146 75 creation argument is analysis window;
+#X text 127 385 sharpen increase the Q of the filter;
+#X obj 19 467 > 40;
+#X text 22 11 Envelope follower;
+#X obj 335 3 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 335 26 \; pd dsp \$1 \;;
+#X obj 19 525 bng 15 250 50 0 empty empty empty 0 -6 0 8 -261689 -258699
+-258699;
+#X obj 43 526 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 21 164 >= 20;
+#X obj 21 135 -;
+#X text 90 161 If the new signal is 20% louder than the former one
+a bang is outputted.;
+#X text 148 90 in samples (here roughly 371.5 msecs) \, should be power
+of 2;
+#X obj 461 289 adc~;
+#X obj 461 321 env~;
+#X floatatom 461 349 5 0 0 0 - - -;
+#X obj 461 379 clip 70 100;
+#X floatatom 461 410 5 0 0 0 - - -;
+#X obj 460 444 > 70;
+#X obj 460 472 select 1;
+#X obj 460 500 bng 15 250 50 0 empty empty empty 0 -6 0 8 -261689 -258699
+-258699;
+#X connect 0 0 1 0;
+#X connect 0 0 12 0;
+#X connect 1 0 3 0;
+#X connect 2 0 27 1;
+#X connect 3 0 27 0;
+#X connect 4 0 5 0;
+#X connect 6 0 9 0;
+#X connect 7 0 15 0;
+#X connect 8 0 20 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 11 0 6 0;
+#X connect 12 0 2 0;
+#X connect 15 0 8 0;
+#X connect 17 0 24 0;
+#X connect 17 0 25 0;
+#X connect 20 0 17 0;
+#X connect 22 0 23 0;
+#X connect 26 0 4 0;
+#X connect 27 0 26 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;

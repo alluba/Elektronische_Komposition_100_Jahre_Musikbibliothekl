@@ -1,0 +1,11 @@
+#N canvas 446 87 884 746 12;
+#X obj 186 365 tabwrite~ freeze;
+#X obj 185 315 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 223 319 r~ masterin;
+#X obj 186 190 array define freeze 4800;
+#X obj 509 232 tabplay~ freeze;
+#X obj 465 421 output~;
+#X obj 461 200 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 627 232 tabplay~ freeze;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;

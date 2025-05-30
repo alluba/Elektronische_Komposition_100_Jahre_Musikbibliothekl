@@ -1,4 +1,4 @@
-#N canvas 194 38 1318 875 12;
+#N canvas 293 42 1318 875 12;
 #X obj 68 617 output~;
 #X obj 104 277 spigot;
 #X msg 494 280 0;
@@ -232,6 +232,7 @@
 #X obj -43 34 tabplay~ buffer;
 #X obj 36 -6 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj -88 -95 r~ masterin;
+#X text 502 201 freeze;
 #X connect 1 0 42 0;
 #X connect 2 0 1 1;
 #X connect 3 0 1 1;

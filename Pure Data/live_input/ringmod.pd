@@ -1,0 +1,18 @@
+#N canvas 16 131 626 543 12;
+#X obj 195 345 *~;
+#X floatatom 105 274 5 0 0 0 - - - 0;
+#X text 337 34 CARRIER;
+#X text 605 720 500 Hz;
+#X text 521 720 0 Hz;
+#X text 696 720 1000 Hz;
+#X obj 198 312 osc~;
+#X text 250 295 comment;
+#X obj 103 105 vsl 19 162 0.1 1000 1 0 empty empty empty 0 -9 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 198 381 s~ ringmod;
+#X obj 217 215 catch~ ringmodin;
+#X connect 0 0 9 0;
+#X connect 1 0 6 0;
+#X connect 6 0 0 1;
+#X connect 8 0 1 0;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 50 200 1 100 100;

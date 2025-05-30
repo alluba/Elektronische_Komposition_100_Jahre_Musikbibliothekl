@@ -1,0 +1,11 @@
+#N canvas 480 187 245 261 12;
+#X obj 88 166 rev1~, f 17;
+#X obj 86 205 s~ revout;
+#X floatatom 109 133 5 0 100 0 - - - 0;
+#X obj 109 106 hsl 70 19 0 100 0 0 empty empty empty -2 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 87 82 catch~ revin;
+#X connect 0 0 1 0;
+#X connect 2 0 0 1;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X coords 0 -1 1 1 85 60 2 100 100;
